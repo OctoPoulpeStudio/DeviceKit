@@ -8,10 +8,11 @@
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
 //===----------------------------------------------------------------------===//
+#if canImport(WatchKit) || canImport(UIKit)
 
-#if os(watchOS)
+#if canImport(WatchKit)
 import WatchKit
-#else
+#elseif canImport(UIKit)
 import UIKit
 #endif
 
@@ -2318,3 +2319,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif
