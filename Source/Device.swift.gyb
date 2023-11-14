@@ -8,6 +8,7 @@
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
 //===----------------------------------------------------------------------===//
+#if canImport(WatchKit) || canImport(UIKit)
 
 %{
 class Device:
@@ -297,9 +298,9 @@ iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
 }%
-#if os(watchOS)
+#if canImport(WatchKit)
 import WatchKit
-#else
+#elseif canImport(UIKit)
 import UIKit
 #endif
 
@@ -1458,3 +1459,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif
