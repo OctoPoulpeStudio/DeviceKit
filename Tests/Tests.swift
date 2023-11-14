@@ -8,6 +8,7 @@
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
 //===----------------------------------------------------------------------===//
+#if canImport(UIKit) || canImport(WatchKit)
 
 @testable import DeviceKit
 import XCTest
@@ -600,3 +601,5 @@ class DeviceKitTests: XCTestCase {
   #endif
 
 }
+
+#endif
